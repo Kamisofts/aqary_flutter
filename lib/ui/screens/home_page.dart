@@ -27,8 +27,10 @@ class HomePage extends StatelessWidget {
             text: 'Custom Painter',
           ),
           CustomButton(
-            onPressed: () {},
-            text: '',
+            onPressed: () {
+              AutoRouter.of(context).push(const StickyHeaderPageRoute());
+            },
+            text: 'Bouncing Sticky Header',
           ),
           CustomButton(
             onPressed: () {},
