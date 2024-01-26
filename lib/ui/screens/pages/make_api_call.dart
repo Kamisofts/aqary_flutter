@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:aqary_flutter/core/blocs/api/api_call_bloc.dart';
 import 'package:aqary_flutter/ui/widgets/custom_button.dart';
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:neumorphic_ui/neumorphic_ui.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -54,7 +55,7 @@ class _MakeApiCallState extends State<MakeApiCall>
                     child: BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
                       child: Container(
-                          height: 50.h,
+                          height: 60.h,
                           decoration: BoxDecoration(
                               color: Colors.grey.shade200.withOpacity(0.5),
                               borderRadius:
@@ -94,6 +95,12 @@ class _MakeApiCallState extends State<MakeApiCall>
                                     context.read<ApiCallBloc>().add(FetchDataEvent());
                                   },
                                   text: 'Make API Call',
+                                ),  CustomButton(
+                                  isRed: true,
+                                  onPressed: () {
+                                    AutoRouter.of(context).pop();
+                                  },
+                                  text: 'Back',
                                 ),
                               ],
                             ),
