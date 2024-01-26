@@ -24,6 +24,14 @@ class AppRouter extends $AppRouter {
           page: StickyHeaderPageRoute.page,
           transitionsBuilder: animationPage,
         ),
+        CustomRoute(
+          page: AsyncTransformersRoute.page,
+          transitionsBuilder: animationPage,
+        ),
+        CustomRoute(
+          page: MakeApiCallRoute.page,
+          transitionsBuilder: animationPage,
+        ),
       ];
 
   Widget animationPage(context, animation, secondaryAnimation, child) =>

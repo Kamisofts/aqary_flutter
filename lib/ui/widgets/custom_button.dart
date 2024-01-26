@@ -4,9 +4,6 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../core/constants/const_colors.dart';
 import '../../core/constants/const_neumorphic.dart';
 
-
-
-
 class CustomButton extends StatelessWidget {
   final Function() onPressed;
   final bool? isOutlined;
@@ -21,24 +18,27 @@ class CustomButton extends StatelessWidget {
       this.hh,
       this.ww,
       required this.text,
-      this.isOutlined,  this.isRed=false});
+      this.isOutlined,
+      this.isRed = false});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 1.h,horizontal: 10.w),
+      margin: EdgeInsets.symmetric(vertical: 1.h, horizontal: 10.w),
       height: hh ?? 6.h,
       width: ww ?? 100.w,
       child: NeumorphicButton(
         onPressed: onPressed,
-        style:isRed?ConstNeumorphic.neumorphicStyle.copyWith(color: Colors.redAccent):ConstNeumorphic.neumorphicStyle,
+        style: isRed
+            ? ConstNeumorphic.neumorphicStyle.copyWith(color: Colors.redAccent)
+            : ConstNeumorphic.neumorphicStyle,
         child: Center(
-          child: NeumorphicText(
+          child: Text(
             text,
-            style: ConstNeumorphic.neumorphicBtnStyle
-                .copyWith(color: ConstColors.kWhite),
-            textStyle: NeumorphicTextStyle(
-                fontSize: 16.sp, fontWeight: FontWeight.w900),
+            style: TextStyle(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w900,
+                color: ConstColors.kWhite),
           ),
         ),
       ),

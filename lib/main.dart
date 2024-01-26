@@ -1,8 +1,10 @@
-import 'package:aqary_flutter/core/blocs/painters_bloc.dart';
+import 'package:aqary_flutter/core/blocs/painters/painters_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+import 'core/blocs/api/api_call_bloc.dart';
+import 'core/blocs/steps/steps_bloc.dart';
 import 'core/constants/const_colors.dart';
 import 'core/routes/routes_import.dart';
 import 'core/utils/injections.dart' as di;
@@ -23,11 +25,14 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => di.sl<PaintersBloc>()),
+        BlocProvider(create: (context) => di.sl<StepsBloc>()),
+        BlocProvider(create: (context) => di.sl<ApiCallBloc>()),
       ],
       child: ResponsiveSizer(
           builder: (context, orientation, screenType)
       {
         return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
           title: 'Flutter Test',
           theme: ThemeData(
 

@@ -6,7 +6,16 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'const_colors.dart';
 
 class ConstNeumorphic{
+  static NeumorphicStyle neumorphicBGStyle =NeumorphicStyle(
 
+      surfaceIntensity: 5,
+
+      shape: NeumorphicShape.convex,
+      boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(2.w)),
+      depth: 80,
+      lightSource: LightSource.bottomRight,
+      color: Colors.white
+  );
   static NeumorphicStyle neumorphicStyle =NeumorphicStyle(
 
       surfaceIntensity: 1,

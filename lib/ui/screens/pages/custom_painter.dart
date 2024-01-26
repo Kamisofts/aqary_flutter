@@ -1,5 +1,5 @@
 import 'package:animations/animations.dart';
-import 'package:aqary_flutter/core/blocs/painters_bloc.dart';
+import 'package:aqary_flutter/core/blocs/painters/painters_bloc.dart';
 import 'package:aqary_flutter/ui/widgets/custom_button.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
@@ -24,7 +24,7 @@ class _CustomPaintersState extends State<CustomPainters>
   @override
   initState() {
     super.initState();
-    c = AnimationController(vsync: this, duration: const Duration(seconds: 2));
+    c = AnimationController(vsync: this, duration: const Duration(seconds: 10));
   }
 
   @override
